@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const targetUrl = 'http://n8n.bew2c.com:5678';
+const targetUrl = process.env.TARGET || 'http://n8n.bew2c.com:5678';
 
 // Configuração simples do proxy, similar ao Nginx
 const proxy = createProxyMiddleware({
